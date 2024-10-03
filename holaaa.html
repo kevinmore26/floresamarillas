@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flor Animada Corregida</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+    }
+
+    .flower {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      background-color: orange;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .petal {
+      position: absolute;
+      width: 40px;
+      height: 80px;
+      background-color: yellow;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform-origin: bottom center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      animation: petal-animation 0.5s ease-in-out forwards;
+    }
+
+    @keyframes petal-animation {
+      from {
+        opacity: 0;
+        transform: scale(0) translate(-50%, -50%);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+      }
+    }
+
+    /* Definimos la rotación de los pétalos para hacer la flor */
+    .petal:nth-child(1) {
+      transform: rotate(0deg) translate(0, -100px);
+      animation-delay: 0s;
+    }
+
+    .petal:nth-child(2) {
+      transform: rotate(30deg) translate(0, -100px);
+      animation-delay: 0.2s;
+    }
+
+    .petal:nth-child(3) {
+      transform: rotate(60deg) translate(0, -100px);
+      animation-delay: 0.4s;
+    }
+
+    .petal:nth-child(4) {
+      transform: rotate(90deg) translate(0, -100px);
+      animation-delay: 0.6s;
+    }
+
+    .petal:nth-child(5) {
+      transform: rotate(120deg) translate(0, -100px);
+      animation-delay: 0.8s;
+    }
+
+    .petal:nth-child(6) {
+      transform: rotate(150deg) translate(0, -100px);
+      animation-delay: 1s;
+    }
+
+    .petal:nth-child(7) {
+      transform: rotate(180deg) translate(0, -100px);
+      animation-delay: 1.2s;
+    }
+
+    .petal:nth-child(8) {
+      transform: rotate(210deg) translate(0, -100px);
+      animation-delay: 1.4s;
+    }
+
+    .petal:nth-child(9) {
+      transform: rotate(240deg) translate(0, -100px);
+      animation-delay: 1.6s;
+    }
+
+    .petal:nth-child(10) {
+      transform: rotate(270deg) translate(0, -100px);
+      animation-delay: 1.8s;
+    }
+
+    .petal:nth-child(11) {
+      transform: rotate(300deg) translate(0, -100px);
+      animation-delay: 2s;
+    }
+
+    .petal:nth-child(12) {
+      transform: rotate(330deg) translate(0, -100px);
+      animation-delay: 2.2s;
+    }
+  </style>
+</head>
+<body>
+  <div class="flower">
+    <div class="center"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+  </div>
+</body>
+</html>
