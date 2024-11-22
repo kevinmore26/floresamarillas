@@ -4,36 +4,61 @@ var lyrics = document.querySelector("#lyrics");
 
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
-  { text: "At the time", time: 15 },
-  { text: "The whisper of birds", time: 18 },
-  { text: "Lonely before the sun cried", time: 27 },
-  { text: "Fell from the sky", time: 32 },
-  { text: "Like water drops", time: 33 },
-  { text: "Where I'm now? I don't know why", time: 41 },
-  { text: "Nice butterflies in my hands", time: 47 },
-  { text: "Too much light for twilight", time: 54 },
-  { text: "In the mood for the flowers love", time: 59 },
-  { text: "That vision", time: 67 },
-  { text: "Really strong, blew my mind", time: 72 },
-  { text: "Silence Let me see what it was", time: 78 },
-  { text: "I only want to live in clouds", time: 83 },
-  { text: "Where I'm now? I don't know why", time: 91 },
-  { text: "Nice butterflies in my hands", time: 97 },
-  { text: "Too much light for twilight", time: 104 },
-  { text: "In the mood for the flowers love", time: 108 },
-  { text: "At the time", time: 144 },
-  { text: "The whisper of birds", time: 148 },
-  { text: "Lonely before the sun cried", time: 153 },
-  { text: "Fell from the sky", time: 158 },
-  { text: "Like water drops", time: 164 },
-  { text: "Where I'm now? I don't know why", time: 169 },
-  { text: "Nice butterflies in my hands", time: 176 },
-  { text: "Too much light for twilight", time: 183 },
-  { text: "In the mood for the flowers", time: 188 },
-  { text: "Love.", time: 140 },
+  {
+    text: "Oh, tus ojos, tus ojos<br/>Hacen parecer que las estrellas no brillan",
+    time: 0,
+  },
+  {
+    text: "Tu cabello, tu cabello<br/>Cae perfecto sin que lo intentes",
+    time: 5.1,
+  },
+  { text: "Eres tan hermosa<br/>Y lo pienso todos los días", time: 10 },
+  {
+    text: "Sí, lo sé, lo sé<br/>Cuando te digo que te quiero, no me crees",
+    time: 18,
+  },
+  { text: "Y es tan, es tan triste<br/>Que no veas como yo te veo", time: 23 },
+  {
+    text: "Pero cada vez que me dices: 'No me quieres >:v'<br/>Yo digo:",
+    time: 27,
+  },
+  { text: "♫♫♫", time: 35 },
+  // { text: "Cuando veo tu rostro<br/>No hay nada que cambiaría", time: 30 },
+  // { text: "Porque eres asombrosa<br/>Así como eres", time: 35 },
+  // {
+  //   text: "Y cuando sonríes<br/>El mundo entero se detiene a mirarte por un momento",
+  //   time: 40,
+  // },
+  // { text: "Porque Fran, eres increíble, <br/>Así como eres", time: 47 },
+  // { text: "Sí", time: 54 },
+  // {
+  //   text: "Sus labios, sus labios<br/>Podría besarlos todo el día si me dejaras",
+  //   time: 55,
+  // },
+  // { text: "Su risa, su risa<br/>La amo y creo que es la más sexy", time: 60 },
+  // { text: "Eres es tan hermosa<br/>Y lo pienso todos los días", time: 65 },
+  // { text: "Oh, sabes, sabes, sabes<br/> Que nunca te pediría que cambies", time: 70 },
+  // {
+  //   text: "Si la perfección es lo que buscas<br/>Entonces simplemente no cambies",
+  //   time: 75,
+  // },
+  // {
+  //   text: "Así que ni te molestes en preguntar cómo te ves<br/>Sabes que pienso",
+  //   time: 80,
+  // },
+  { text: "Cuando veo tu rostro<br/>No hay nada que cambiaría", time: 88 },
+  { text: "Cuando veo tu rostro<br/>No hay nada que cambiaría", time: 93 },
+  { text: "Porque eres asombrosa<br/>Así como eres Fran ", time: 98 },
+  {
+    text: "♫♫♫",
+    time: 106,
+  },
+  {
+    text: "Te quiero mucho<3",
+    time: 110,
+  },
 ];
 
-// Animar las letras
 function updateLyrics() {
   var time = Math.floor(audio.currentTime);
   var currentLine = lyricsData.find(
@@ -41,17 +66,12 @@ function updateLyrics() {
   );
 
   if (currentLine) {
-    // Calcula la opacidad basada en el tiempo en la línea actual
-    var fadeInDuration = 0.1; // Duración del efecto de aparición en segundos
-    var opacity = Math.min(1, (time - currentLine.time) / fadeInDuration);
-
-    // Aplica el efecto de aparición
-    lyrics.style.opacity = opacity;
+    lyrics.style.opacity = 1; // Aparece
+    lyrics.style.transform = "translateY(0)"; // Vuelve a la posición original
     lyrics.innerHTML = currentLine.text;
   } else {
-    // Restablece la opacidad y el contenido si no hay una línea actual
-    lyrics.style.opacity = 0;
-    lyrics.innerHTML = "";
+    lyrics.style.opacity = 0; // Desaparece
+    lyrics.style.transform = "translateY(10px)"; // Desciende ligeramente
   }
 }
 
