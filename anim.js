@@ -6,7 +6,7 @@ var lyrics = document.querySelector("#lyrics");
 var lyricsData = [
   {
     text: "Oh, tus ojos, tus ojos<br/>Hacen parecer que las estrellas no brillan",
-    time: 0,
+    time: 1,
   },
   {
     text: "Tu cabello, tu cabello<br/>Cae perfecto sin que lo intentes",

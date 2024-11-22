@@ -16,25 +16,39 @@ body {
 }
 
 .botones {
-    padding: 9px;
-    border-radius: 80px;
-    background-color: transparent;
-    border: 2px solid #ff99c8; /* Borde rosa pastel */
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #ffb3c1, #ff99c8);
+    box-shadow: 4px 4px 10px #cc8494, -4px -4px 10px #ffe5ef; /* Efecto de relieve */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 .botones:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
-    background-color: #ff99c8; /* Fondo rosa pastel al hacer hover */
+    transform: scale(1.1); /* Efecto de zoom */
+    background: linear-gradient(145deg, #ff99c8, #ffb3c1);
+    box-shadow: 6px 6px 15px #cc8494, -6px -6px 15px #ffe5ef;
 }
 
 .botones a {
-    background-color: #ffb3c1; /* Botón rosa pastel */
-    padding: 9px 20px;
-    border-radius: 80px;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
     text-decoration: none;
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 10px 25px;
+    background: transparent;
+    border-radius: 50px;
+    text-align: center;
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+.botones a:hover {
+    color: #1a001a; /* Texto oscuro */
+    background: rgba(255, 255, 255, 0.3); /* Fondo translúcido */
 }
 
 .botones a:hover {
@@ -43,7 +57,7 @@ body {
 }
 
 .greetings {
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 900;
     color: #ffccf9; /* Color rosa pastel */
 }
